@@ -1,0 +1,217 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.search {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  max-width: 425px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.value {
+  color: #34495e;
+  font-size: 3rem;
+  height: 100%;
+  text-align: right;
+}
+.value span {
+  font-size: 0.5em;
+}
+
+button.recherche {
+  background: #ffffff;
+  padding: 0.8em;
+  color: #787878;
+  font-size: 1em;
+  cursor: pointer;
+  border: solid #787878;
+  max-height: 425px;
+}
+button.recherche:hover {
+  background: #d4d4d4;
+  color: white;
+}
+
+input[type=range] {
+  z-index: 3;
+  display: block;
+  -webkit-appearance: none;
+  background-color: #bdc3c7;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: 0;
+  height: 8px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #e74c3c;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+​ input[type=range]::-webkit-slider-thumb:hover {
+  background-color: white;
+  border: 2px solid #e74c3c;
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  transform: scale(1.4);
+}
+
+@media screen and (min-width: 0px) {
+  .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+    margin: 20px 20px 0 0;
+    float: right;
+  }
+}
+.inner {
+  display: none;
+}
+
+body.open {
+  display: flex;
+}
+body.open .mapboxgl-ctrl-top-right {
+  right: inherit;
+}
+body.open .mapboxgl-ctrl-geocoder, body.open .mapboxgl-ctrl {
+  left: 20px;
+}
+body.open nav {
+  display: flex;
+  flex-direction: column;
+  background: #ff6384;
+  height: 100%;
+  width: 30%;
+}
+body.open nav > * {
+  position: initial !important;
+}
+body.open nav #map {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+body.open nav .search {
+  background: unset;
+  flex-direction: column;
+}
+body.open nav .search .recherche {
+  margin-top: 2em;
+  width: 90%;
+  order: 0;
+  background: white;
+  color: #ff6384;
+  border: solid 5px #bd276f;
+  transition: 0.2s;
+}
+body.open nav .search .recherche:hover {
+  border-radius: 20px;
+}
+body.open nav .search .value {
+  order: 2;
+  margin-top: 0.3em;
+  color: #fff;
+}
+body.open nav .search input {
+  width: 90%;
+  order: 3;
+  margin-top: 0.4em;
+  background-color: #eee;
+}
+body.open nav .mapboxgl-control-container {
+  z-index: 999;
+}
+body.open nav .mapboxgl-ctrl-bottom-left {
+  position: fixed;
+  top: 210px;
+}
+body.open nav .mapboxgl-ctrl-bottom-right {
+  top: 202px;
+  left: 25%;
+  right: auto;
+}
+body.open nav .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl.mapboxgl-ctrl-attrib.mapboxgl-compact:hover {
+  position: fixed;
+  left: 37px;
+}
+body.open .inner {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  width: 70%;
+  padding: 0em 0em 2em 0em;
+  background: rgba(255, 255, 255, 0.5);
+}
+body.open .inner > div {
+  width: 92%;
+  flex-direction: row;
+  padding: 0em 4%;
+}
+body.open .inner > div .chartjs-render-monitor {
+  width: 100% !important;
+}
+body.open .inner #char {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body.open .inner #avg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  flex-wrap: wrap;
+}
+body.open .inner #avg > div {
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+body.open .inner #avg > div > div {
+  background: #ff6384;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body.open .inner #avg > div > div div:first-child {
+  font-size: 1.5em;
+}
+body.open .inner #avg > div > div div:first-child span {
+  font-size: 0.8em;
+}
+body.open .inner #avg > div > div div {
+  font-size: 1em;
+}
+
+/*# sourceMappingURL=style.css.map */
